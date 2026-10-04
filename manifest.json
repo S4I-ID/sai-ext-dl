@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "S4I's Image Downloader",
+  "version": "1.0.0",
+  "description": "Downloads images from certain websites.",
+  "permissions": [
+    "downloads",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://x.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_title": "Sai's Image Downloader",
+    "default_icon": {
+      "48": "icons/inactive.svg"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
